@@ -1,0 +1,161 @@
+body {
+    background-image: url(../img/background.jpg);
+    background-position: 0 0;
+    background-size: auto;
+
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+
+    display:flex; 
+    flex-direction:column; 
+}
+
+header {
+    display: flex;    
+    justify-content: center;
+    padding: 1rem;
+}
+
+section {
+    display: -webkit-flex;
+    display: flex;
+}
+  
+nav {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+  
+article {
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 3;
+    background-color: white;
+    padding: 1rem;
+}
+  
+footer {
+    display: flex;
+    justify-content: center;
+    margin-top: auto; 
+    padding: 1rem;
+}
+
+h3 {
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+a {
+    color: #0D90FF;
+}
+
+p {
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+button {
+    border: none;
+}
+
+#submit_button {
+    color: white;
+    cursor: pointer;
+    background-color: #40b0ff;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+#submit_button:disabled {
+    background-color: lightgray;
+}
+
+.notification {
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin: 0.6rem 0 0.6rem 0;
+}
+
+.type-info {
+    background-color: #40b0ff;
+}
+.type-warning {
+    background-color: #ffda00;
+}
+.type-error {
+    background-color: #ff3d3d;
+}
+
+label {
+    color: white;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+label[for="info"] {
+    background-color: #40b0ff;
+}
+label[for="warning"] {
+    background-color: #ffda00;
+}
+label[for="error"] {
+    background-color: #ff3d3d;
+}
+
+#bell {
+    background: #d8f5ff;
+    border: 0;
+    position: relative;
+    padding: 0.75rem;
+    border-radius: 100%;
+    margin-bottom: 1rem;
+  }
+
+#bell:after {
+    content: attr(data-badge);
+    position: absolute;
+    background-color: #e70000;
+    color: #fff;
+    padding: 0.35rem;
+    border-radius: 2rem;
+    top: -0.35rem;
+    right: -0.35rem;
+  }
+
+#bell.hiddenbadge:after {
+    visibility: hidden;
+}
+
+.markread-button {
+    float: right;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+}
+
+#n_text {
+    border: 1px solid lightgray;
+}
+#n_text:invalid {
+    border: 1px solid red;
+}
+#n_text:invalid:focus {
+    background-color: rgb(253, 212, 212);
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    section {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}

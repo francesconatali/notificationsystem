@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beam Notification Client</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- script.js is manually compiled from script.ts-->
+    <script src="./script/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Beam Notification Client</h1>
+    </header>
+    
+    <section>
+        <nav>
+            <button id="bell" class="hiddenbadge" data-badge="" title="unread notifications" aria-label="unread notifications">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAACsElEQVRoge2azWsTQRjGf7WY2KopeNI2NVrQ4sUcrB9H9SIKnlQ8iuBJPIn+D73o3+BBLxLUg3jy7Mmi+NEqSMEPKGorNDWirTYe5l3SJtlk39mdmYA+8JBs8r7zPs/OTGZ3NuAOo0AFqArvAeMO6znBKLAA1Ju4ABQD6lKjQquJiHcD6lKjSryRRRcFN7hotAvqLhp1ZeSx5XfBMQBcAybleJz4yb5HYiYlZ8Cr0g4oAzMYob+BCfm8iJnYi8IKDRMHJbYuuWWPetviOFBj/VmfxwiNwyFae6sGHHOqtAPKtJqIuALcAg4Dg8Ij8tlKTE4N2O/VAbAJmI4RlIbT0rY3XHdgIuJVXyY2Al8cGvksNZzjtEMTEU9pRdksiCcscrQ4qU2wMTLRPSQ1DmgTbIzssshxXqPPoshPIG+Rp62hunTRGskBv5Q5tshhFs9E0A6tLcr4NNisCf5vxAO2aoK1RkrK+DTYqQnWGvG5naOqpTWyVxmfBk5P2ivcX2dFfO7KRNGjiTqwCgwnFacZWmcVsVmgDziTdaP9wDv89kgdmJXameFiABMRL2RlYgT4FtDIPLAjrYkC8CygiYhPUa70azEGvOwBExFfALu1Jo5iujS0+GZ+FW2JcB5Y7gHRcVwGziUx8qkHxHbjx2bR7RZE60nlES0a2xl55EFIWjxMEjQMvCX88InjG2B7UseDwE3id9tDsAbcEG1qFIBLwANgLoD4OeC+aCh0EqrdDioB+zAbaCXM8/RtUmRIuPa+fojGPFxl/RPd7zSeZlUxl0EfgPfCGXn9t2Cz09gJY5iz+0eOf9DY0MvTGN/9mF6czbh+Zlgi+fjP9I8DWT9nf+0otiuyNnJHEXs749qZIk+y+5cpzCZ1T2OEzmamUOyOhEYOuAI8wfwALMn7yzjqib8v76Eh+HRjNAAAAABJRU5ErkJggg==" alt="" tabindex="-1" />
+            </button>
+            <ul id="list_notifications">
+            </ul>
+        </nav>
+        
+        <article>
+            <h3>Create a notification</h3>
+            <p>
+                Type:<br>
+                <input type="radio" id="info" name="n_type" value="info" checked="checked" onchange="updateType(this.value)">
+                <label for="info">info</label>
+                <input type="radio" id="warning" name="n_type" value="warning" onchange="updateType(this.value)">
+                <label for="warning">warning</label>
+                <input type="radio" id="error" name="n_type" value="error" onchange="updateType(this.value)">
+                <label for="error">error</label>
+            </p>
+            <p>
+                Message <i>(min. 3 letters)</i>:<br>
+                <input type="text" id="n_text" autofocus="autofocus" minlength="3" oninput="updateText(this.value)">
+            </p>
+            <p>
+                <button type="button" id="submit_button" onclick="addNotification()" disabled>Submit</button>
+            </p>
+        </article>
+    </section>
+
+    <footer>
+        Coded by&nbsp;<a href="https://francesconatali.com" target="_blank">Francesco Natali</a>
+    </footer>
+
+    <script>
+        getNotifications();
+    </script>
+</body>
+</html>
