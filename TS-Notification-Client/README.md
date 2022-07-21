@@ -1,6 +1,8 @@
 # Notification Client ✨
 
-Client to test the API server. Please don't judge me on the style! This is something I quickly put together just to test.
+Client to test the API server. 
+
+Please don't judge me on the style! This is something I quickly put together just to test.
 
 ## Requirements
 
