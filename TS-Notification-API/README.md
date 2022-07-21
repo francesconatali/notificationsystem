@@ -1,6 +1,4 @@
-# Notification System ✨
-
-A project entirely implemented in TypeScript without using any framework or extra library.
+# API Server ✨
 
 The API can send a new notification, list all unread notifications, and mark a notification as read.<br>
 Data are retrieved and stored using a JSON file.
